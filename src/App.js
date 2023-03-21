@@ -18,11 +18,18 @@ export default class App extends Component {
       : "bg-secondary text-white text-center p-2 m-1";
   }
 
+  handleClick = () => {
+    this.setState({ number: this.state.number + 1 });
+  };
+
   render() {
     return (
       <div>
         <h4 className={this.getClassName(this.state.number)}>
-          Number of things: {this.isEven()}
+          <button className="btn btn-info m-2" onClick={this.handleClick}>
+            Click me!
+          </button>
+          Number is {this.isEven()}
         </h4>
       </div>
     );
